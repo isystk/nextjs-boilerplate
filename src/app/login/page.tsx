@@ -5,7 +5,6 @@ import BasicLayout from '@/components/templates/BasicLayout';
 import useAppRoot from '@/states/useAppRoot';
 import Link from 'next/link';
 import TextInput from '@/components/atoms/TextInput';
-import {Api} from '@/constants/api';
 
 // TODO react-google-recaptcha-v3 が react19では未だサポートされていないのでコメントアウト
 // import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
@@ -42,7 +41,7 @@ const LoginForm = () => {
             </button>
           </form>
         </div>
-        <form method="POST" action={Api.LOGIN} id="login-form">
+        <form method="POST" action={Url.LOGIN} id="login-form">
           <CSRFToken />
           <div className="mx-auto md:w-100">
             <TextInput

@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "ts-check": "tsc --noEmit",
+    "lint": "next lint",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^3.7.0",
