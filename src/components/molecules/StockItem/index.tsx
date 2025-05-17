@@ -53,7 +53,7 @@ const StockItem = ({ id, name, imgpath, price, detail, quantity, isLike }: Props
         </button>
       </div>
       <Image
-        src={`/uploads/stock/${imgpath}`}
+        src={`/images/stock/${imgpath}`}
         width={276}
         height={184}
         alt={name}

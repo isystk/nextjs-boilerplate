@@ -67,7 +67,7 @@ const Header = () => {
             })()}
             <li>
               <Link href={Url.MYCART}>
-                <Image src={cartImage as string} width={30} height={30} alt="カート" />
+                <Image src={cartImage.src} width={30} height={30} alt="カート" />
               </Link>
             </li>
             <li>

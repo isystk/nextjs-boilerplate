@@ -68,10 +68,10 @@ const Top = () => {
     <BasicLayout title="TOP">
       <Carousel
         images={[
-          { src: banner01Image as string, alt: 'Slide 1' },
-          { src: banner02Image as string, alt: 'Slide 2' },
-          { src: banner01Image as string, alt: 'Slide 3' },
-          { src: banner02Image as string, alt: 'Slide 4' },
+          { src: banner01Image.src, alt: 'Slide 1' },
+          { src: banner02Image.src, alt: 'Slide 2' },
+          { src: banner01Image.src, alt: 'Slide 3' },
+          { src: banner02Image.src, alt: 'Slide 4' },
         ]}
         autoPlay={true}
         autoPlayInterval={5000}

@@ -1,3 +1,4 @@
+'use client';
 import SessionAlert from '@/components/atoms/SessionAlert';
 import BasicLayout from '@/components/templates/BasicLayout';
 

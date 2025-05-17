@@ -1,5 +1,6 @@
+'use client';
 import { Url } from '@/constants/url';
-import Link from 'next/navigation';
+import Link from 'next/link';
 import BasicLayout from '@/components/templates/BasicLayout';
 
 const ContactComplete = () => {

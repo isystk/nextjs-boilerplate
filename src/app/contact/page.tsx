@@ -1,3 +1,4 @@
+'use client';
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
 import CSRFToken from '@/components/atoms/CSRFToken';

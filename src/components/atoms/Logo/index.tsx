@@ -17,7 +17,7 @@ const LinkLogo = () => {
   return (
     <Link href={Url.TOP} className={`flex items-center`}>
       <Image
-        src={logoImage as string}
+        src={logoImage.src}
         width={200}
         height={60}
         alt={Env.APP_NAME}
@@ -30,7 +30,7 @@ const LinkLogo = () => {
 const NoLinkLogo = () => {
   return (
     <Image
-      src={logoImage as string}
+      src={logoImage.src}
       width={200}
       height={60}
       alt={Env.APP_NAME}

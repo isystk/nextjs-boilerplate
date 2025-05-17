@@ -1,3 +1,4 @@
+'use client';
 import useAppRoot from '@/states/useAppRoot';
 import { useEffect, useState } from 'react';
 import BasicLayout from '@/components/templates/BasicLayout';
@@ -6,6 +7,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentModal from '@/components/molecules/PaymentModal';
 import Env from '@/constants/env';
+import AuthCheck from '@/components/interactions/AuthCheck';
 
 const stripePromise = loadStripe(Env.STRIPE_KEY);
 
@@ -14,10 +16,11 @@ const MyCart = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
   useEffect(() => {
+    if (!service) return;
     service.cart.readCarts();
   }, [service]);
 
-  if (!state) return <></>;
+  if (!state || !service) return <></>;
   const { name } = state.auth;
   const { data, message, count, sum } = state.cart;
 
@@ -67,4 +70,4 @@ const MyCart = () => {
   );
 };
 
-export default MyCart;
+export default () => <AuthCheck component={<MyCart />} />;

@@ -17,8 +17,6 @@ export default function AppWrapper({ children }: Props) {
     .then(res => setUser(res.data))
     .catch(() => setUser({} as User));
   }, []);
-  
-  console.log({user})
 
   return (
     <AppProvider user={user}>
