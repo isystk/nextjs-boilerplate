@@ -5,7 +5,7 @@ import banner01Image from '@/assets/images/banner_01.jpg';
 import banner02Image from '@/assets/images/banner_02.jpg';
 import useAppRoot from '@/states/useAppRoot';
 import { useSearchParams, useRouter } from 'next/navigation';
-import {Suspense, useEffect, useMemo, useState} from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import StockItem, { Props as StockItemProps } from '@/components/molecules/StockItem';
 import Pagination from '@/components/atoms/Pagination';
 import { Url } from '@/constants/url';
@@ -107,6 +107,6 @@ const Top = () => {
       <Component />
     </Suspense>
   );
-}
+};
 
 export default Top;
