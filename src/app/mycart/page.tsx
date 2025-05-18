@@ -7,10 +7,12 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentModal from '@/components/molecules/PaymentModal';
 import Env from '@/constants/env';
+import AuthCheck from '@/components/interactions/AuthCheck';
+import { User } from '@/states/auth';
 
 const stripePromise = loadStripe(Env.STRIPE_KEY);
 
-const MyCart = () => {
+const Component = () => {
   const { state, service } = useAppRoot();
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
@@ -67,6 +69,11 @@ const MyCart = () => {
       </div>
     </BasicLayout>
   );
+};
+
+const MyCart = () => {
+  // TODO 認証情報を渡す
+  return <AuthCheck user={{} as User} component={<Component />} />;
 };
 
 export default MyCart;
