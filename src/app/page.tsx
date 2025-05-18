@@ -4,8 +4,8 @@ import Carousel from '@/components/atoms/Carousel';
 import banner01Image from '@/assets/images/banner_01.jpg';
 import banner02Image from '@/assets/images/banner_02.jpg';
 import useAppRoot from '@/states/useAppRoot';
-import { useSearchParams , useRouter  } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
+import {Suspense, useEffect, useMemo, useState} from 'react';
 import StockItem, { Props as StockItemProps } from '@/components/molecules/StockItem';
 import Pagination from '@/components/atoms/Pagination';
 import { Url } from '@/constants/url';
@@ -22,7 +22,7 @@ type Stock = {
   isLike: boolean;
 };
 
-const Top = () => {
+const Component = () => {
   const { state, service } = useAppRoot();
 
   const router = useRouter();
@@ -100,5 +100,13 @@ const Top = () => {
     </BasicLayout>
   );
 };
+
+const Top = () => {
+  return (
+    <Suspense fallback={<p>読み込み中...</p>}>
+      <Component />
+    </Suspense>
+  );
+}
 
 export default Top;

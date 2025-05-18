@@ -4,7 +4,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Url } from '@/constants/url';
 import CSRFToken from '@/components/atoms/CSRFToken';
-import { useRouter  } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import {
   useStripe,
   useElements,
@@ -23,7 +23,7 @@ type Props = {
 
 const PaymentModal = ({ isOpen, handleClose, amount }: Props) => {
   const { state, service } = useAppRoot();
-  
+
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();

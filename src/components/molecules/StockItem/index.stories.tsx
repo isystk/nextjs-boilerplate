@@ -9,7 +9,7 @@ const meta = {
   component: StockItem,
   tags: ['autodocs'],
 };
-export default meta 
+export default meta;
 
 export const Default: { render: () => JSX.Element } = {
   render: () => {
@@ -40,7 +40,7 @@ export const Logined: { render: () => JSX.Element } = {
 
       useEffect(() => {
         if (!service) {
-          return
+          return;
         }
 
         service.auth.setUser({
@@ -60,9 +60,9 @@ export const Logined: { render: () => JSX.Element } = {
         quantity: 3,
         isLike: false,
       };
-      
+
       if (!state || !service) {
-        return <></>
+        return <></>;
       }
 
       return <StockItem {...props} />;

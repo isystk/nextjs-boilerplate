@@ -1,6 +1,6 @@
 'use client';
 import styles from './styles.module.scss';
-import { useRouter  } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Image from '@/components/atoms/Image';
 import { Url } from '@/constants/url';
 import useAppRoot from '@/states/useAppRoot';

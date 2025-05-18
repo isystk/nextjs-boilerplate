@@ -16,7 +16,7 @@ export const Default: { render: () => JSX.Element } = {
       const { state, service } = useAppRoot();
       useEffect(() => {
         if (!state || !service) {
-          return
+          return;
         }
         service.showLoading();
       }, [state, service]);
@@ -33,7 +33,7 @@ export const HideLoading: { render: () => JSX.Element } = {
       const { state, service } = useAppRoot();
       useEffect(() => {
         if (!state || !service) {
-          return
+          return;
         }
         service.showLoading();
         setTimeout(() => {

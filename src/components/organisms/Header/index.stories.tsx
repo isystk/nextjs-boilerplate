@@ -9,7 +9,7 @@ const meta = {
   component: Header,
   tags: ['autodocs'],
 };
-export default meta
+export default meta;
 
 export const Default: { render: () => JSX.Element } = {
   render: () => <Header />,

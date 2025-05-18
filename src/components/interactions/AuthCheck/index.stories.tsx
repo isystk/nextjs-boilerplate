@@ -16,7 +16,7 @@ export const LoggedInVerified: StoryFn = () => {
     const { state, service } = useAppRoot();
     useEffect(() => {
       if (!service) {
-        return
+        return;
       }
       service.auth.setUser({
         id: 1,
@@ -41,7 +41,7 @@ export const NotVerified: StoryFn = () => {
     const { state, service } = useAppRoot();
     useEffect(() => {
       if (!service) {
-        return
+        return;
       }
       service.auth.setUser({
         id: 2,

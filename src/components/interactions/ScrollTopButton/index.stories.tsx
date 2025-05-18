@@ -10,7 +10,7 @@ const meta = {
   },
   tags: ['autodocs'],
 };
-export default meta
+export default meta;
 
 export const Default: StoryFn = () => {
   return (

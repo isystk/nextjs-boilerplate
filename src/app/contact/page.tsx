@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
 import CSRFToken from '@/components/atoms/CSRFToken';
 import { KeyValue } from '@/states/const';
-import { useRouter  } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Url } from '@/constants/url';
 import BasicLayout from '@/components/templates/BasicLayout';
 import useAppRoot from '@/states/useAppRoot';
@@ -36,11 +36,11 @@ const ContactCreate = () => {
   const auth = state.auth;
   const { age, gender } = state.const;
 
-  const handleSubmit = async  (values: ContactFormValues) => {
+  const handleSubmit = async (values: ContactFormValues) => {
     if (!service) {
-      return
+      return;
     }
-    
+
     // 入力したお問い合わせ内容を送信する。
     await service.contact.registContact(values);
     // 完了画面を表示する

@@ -2,8 +2,8 @@
 import React from 'react';
 import { redirect } from 'next/navigation';
 import { Url } from '@/constants/url';
-import {ReactNode} from 'react';
-import {User} from '@/states/auth';
+import { ReactNode } from 'react';
+import { User } from '@/states/auth';
 
 type Props = {
   user: User;
@@ -18,7 +18,7 @@ const AuthCheck = ({ user, component }: Props) => {
 
   // 新規会員登録後、メール確認が未完了の場合
   if (!user.email_verified_at) {
-    return redirect(Url.EMAIL_VERIFY)
+    return redirect(Url.EMAIL_VERIFY);
   }
 
   // ログイン済みの場合

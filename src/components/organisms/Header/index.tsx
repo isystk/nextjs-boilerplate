@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import Logo from '@/components/atoms/Logo';
 import Link from 'next/link';
-import { useRouter  } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Url } from '@/constants/url';
 import Image from '@/components/atoms/Image';
 import DropDown from '@/components/atoms/DropDown';

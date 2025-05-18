@@ -7,7 +7,7 @@ const meta = {
   component: Footer,
   tags: ['autodocs'],
 };
-export default meta
+export default meta;
 
 export const Default: { render: () => JSX.Element } = {
   render: () => <Footer />,

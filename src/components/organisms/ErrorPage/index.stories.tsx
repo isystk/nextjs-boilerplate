@@ -7,7 +7,7 @@ const meta = {
   component: ErrorPage,
   tags: ['autodocs'],
 };
-export default meta
+export default meta;
 
 export const Default500: { render: () => JSX.Element } = {
   render: () => <ErrorPage />,

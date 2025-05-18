@@ -3,7 +3,7 @@ import PaymentModal from './index';
 import { JSX } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import {Meta} from '@storybook/react';
+import { Meta } from '@storybook/react';
 
 const stripePromise = loadStripe('pk_test_XXXXXXXXXXXXXXXXXXXXXXXX'); // ダミーの公開キー
 
@@ -19,7 +19,7 @@ const meta = {
     ),
   ],
 } as Meta<typeof PaymentModal>;
-export default meta
+export default meta;
 
 export const Default: { render: () => JSX.Element } = {
   render: () => (
