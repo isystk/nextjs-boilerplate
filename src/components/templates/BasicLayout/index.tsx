@@ -34,7 +34,7 @@ const BasicLayout = ({ children, title }: Readonly<Props>) => {
   if (!state) return <></>;
 
   return (
-    <>
+    <ErrorBoundary>
       <Header />
       <Circles>
         <main className="content">{children}</main>
@@ -53,7 +53,7 @@ const BasicLayout = ({ children, title }: Readonly<Props>) => {
       />
       <ScrollTopButton />
       <Loading />
-    </>
+    </ErrorBoundary>
   );
 };
 

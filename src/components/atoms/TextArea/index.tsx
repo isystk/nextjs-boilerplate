@@ -8,7 +8,7 @@ type Props = {
   autoComplete?: string;
   label: string;
   defaultValue?: string;
-  action?: any;
+  action?: (value: string) => void;
   autoFocus?: boolean;
   required?: boolean;
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;

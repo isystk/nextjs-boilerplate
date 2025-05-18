@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌙 nextjs-boilerplate
+====
 
-## Getting Started
+![CI](https://github.com/isystk/nextjs-boilerplate/actions/workflows/unitTest.yml/badge.svg)
+![GitHub issues](https://img.shields.io/github/issues/isystk/nextjs-boilerplate)
+![GitHub forks](https://img.shields.io/github/forks/isystk/nextjs-boilerplate)
+![GitHub stars](https://img.shields.io/github/stars/isystk/nextjs-boilerplate)
+![GitHub license](https://img.shields.io/github/license/isystk/nextjs-boilerplate)
 
-First, run the development server:
+## 📗 プロジェクトの概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Next.js、Storybook、Vitest のボイラープレートです。
+
+#### 使用しているライブラリ
+
+- Next.js 15
+- Storybook 8.6
+- Typescript 5
+- Tailwindcss 4
+- Vitest 3
+
+## 🌐 Demo
+
+![フロント画面](./documents/front.png "フロント画面")
+
+## 📦 ディレクトリ構造
+
+```
+.
+├── .env
+├── .env.example
+├── .prettierrc
+├── .storybook
+│   ├── main.ts
+│   ├── preview.tsx
+│   └── vitest.setup.ts
+├── README.md
+├── documents
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── node_modules
+├── public
+│   └── images
+├── src
+│   ├── @types
+│   ├── app
+│   ├── assets
+│   ├── components
+│   ├── constants
+│   ├── services
+│   └── states
+├── tsconfig.json
+└── vitest.config.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 動作を確認する
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# アプリを起動する
+> npm run dev
 
-## Learn More
+# Storybookを起動する
+> npm run storybook
 
-To learn more about Next.js, take a look at the following resources:
+# テストコードを実行する
+> npm run test
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### storybook
+Reactで作成されたコンポーネントの確認が可能です。
 
-## Deploy on Vercel
+http://localhost:6006/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![storybook](./documents/storybook.png "storybook")
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📖 ドキュメント
+
+| 種類       | リンク                                                                           |
+|:-----------|:------------------------------------------------------------------------------|
+| コーディング規約   | [React コーディング規約](./documents/react_cording_rule.md)                           |
+| 公式サイト    | [Next.js 15公式ドキュメント](https://nextjs.org/docs)                                 |
+| 公式サイト    | [Tailwind CSS ドキュメント](https://v3.tailwindcss.com/docs/)                       |
+| 参考サイト    | [React Hooks 全19種の解説とサンプル](https://isystk.github.io/react19-hook-study/study) |
+
+
+## 🎫 Licence
+
+[MIT](https://github.com/isystk/nextjs-boilerplate/blob/master/LICENSE)
+
+## 👀 Author
+
+[isystk](https://github.com/isystk)

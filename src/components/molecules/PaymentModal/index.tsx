@@ -28,7 +28,7 @@ const PaymentModal = ({ isOpen, handleClose, amount }: Props) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  if (!state) return <></>;
+  if (!state || !service) return <></>;
   const handlePayment = async ({ amount, username }) => {
     if (!stripe || !elements) {
       return;

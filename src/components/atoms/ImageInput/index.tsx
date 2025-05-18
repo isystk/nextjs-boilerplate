@@ -12,7 +12,7 @@ type Props = {
   required?: boolean;
   className?: string;
   error?: string;
-  setFieldValue?: (field: string, value: any) => void;
+  setFieldValue?: (field: string, value: string | File) => void;
   noImage?: string;
 };
 

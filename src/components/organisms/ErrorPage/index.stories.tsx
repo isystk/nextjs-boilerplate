@@ -2,11 +2,12 @@ import React from 'react';
 import ErrorPage from './index';
 import { JSX } from 'react';
 
-export default {
+const meta = {
   title: 'Components/Organisms/ErrorPage',
   component: ErrorPage,
   tags: ['autodocs'],
 };
+export default meta
 
 export const Default500: { render: () => JSX.Element } = {
   render: () => <ErrorPage />,

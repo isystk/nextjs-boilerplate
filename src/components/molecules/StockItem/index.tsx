@@ -21,7 +21,7 @@ const StockItem = ({ id, name, imgpath, price, detail, quantity, isLike }: Props
   const { state, service } = useAppRoot();
   const router = useRouter();
 
-  if (!state) return <></>;
+  if (!state || !service) return <></>;
 
   const handleLikeClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

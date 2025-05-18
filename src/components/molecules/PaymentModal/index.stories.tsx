@@ -3,10 +3,11 @@ import PaymentModal from './index';
 import { JSX } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import {Meta} from '@storybook/react';
 
 const stripePromise = loadStripe('pk_test_XXXXXXXXXXXXXXXXXXXXXXXX'); // ダミーの公開キー
 
-export default {
+const meta = {
   title: 'Components/Molecules/PaymentModal',
   component: PaymentModal,
   tags: ['autodocs'],
@@ -17,7 +18,8 @@ export default {
       </Elements>
     ),
   ],
-};
+} as Meta<typeof PaymentModal>;
+export default meta
 
 export const Default: { render: () => JSX.Element } = {
   render: () => (

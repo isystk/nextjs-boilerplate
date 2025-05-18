@@ -2,11 +2,12 @@ import React from 'react';
 import CartItem from './index';
 import { JSX } from 'react';
 
-export default {
+const meta = {
   title: 'Components/Molecules/CartItem',
   component: CartItem,
   tags: ['autodocs'],
 };
+export default meta
 
 export const Default: { render: () => JSX.Element } = {
   render: () => {

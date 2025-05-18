@@ -19,6 +19,7 @@ export default class LikeService {
       this.like.stockIds = stockIds;
     } catch (e) {
       this.main.showToastMessage('お気に入りの取得に失敗しました');
+      throw e;
     }
 
     this.main.hideLoading();
@@ -43,6 +44,7 @@ export default class LikeService {
       }
     } catch (e) {
       this.main.showToastMessage('お気に入りの追加に失敗しました');
+      throw e;
     }
     this.main.hideLoading();
   }

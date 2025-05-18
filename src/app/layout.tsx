@@ -1,9 +1,9 @@
 import '@/assets/styles/app.scss';
-import { ReactNode } from 'react';
 import AppWrapper from './AppWrapper';
+import {JSX} from 'react';
 
 type Props = {
-  children: ReactNode;
+  children: JSX.Element;
 };
 
 export default function RootLayout({ children }: Props) {

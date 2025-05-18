@@ -4,11 +4,12 @@ import { JSX, useEffect } from 'react';
 import useAppRoot from '@/states/useAppRoot';
 import { type User } from '@/states/auth';
 
-export default {
+const meta = {
   title: 'Components/Organisms/Header',
   component: Header,
   tags: ['autodocs'],
 };
+export default meta
 
 export const Default: { render: () => JSX.Element } = {
   render: () => <Header />,

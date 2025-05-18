@@ -50,7 +50,7 @@ export const NotVerified: StoryFn = () => {
         email_verified_at: null,
       } as User);
     }, [service]);
-    if (!state || !service) {
+    if (!state) {
       return <></>;
     }
     return <div>Protected Content</div>;

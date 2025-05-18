@@ -15,11 +15,12 @@ export const Default: { render: () => JSX.Element } = {
     const Component = () => {
       const { state, service } = useAppRoot();
       useEffect(() => {
-        if (state) {
-          service.showLoading();
+        if (!state || !service) {
+          return
         }
+        service.showLoading();
       }, [state, service]);
-      if (!state) return <></>;
+      if (!state || !service) return <></>;
       return <Loading />;
     };
     return <Component />;
@@ -31,15 +32,16 @@ export const HideLoading: { render: () => JSX.Element } = {
     const Component = () => {
       const { state, service } = useAppRoot();
       useEffect(() => {
-        if (state) {
-          service.showLoading();
-          setTimeout(() => {
-            // 1秒後に消す
-            service.hideLoading();
-          }, 1000);
+        if (!state || !service) {
+          return
         }
+        service.showLoading();
+        setTimeout(() => {
+          // 1秒後に消す
+          service.hideLoading();
+        }, 1000);
       }, [state, service]);
-      if (!state) return <></>;
+      if (!state || !service) return <></>;
       return <Loading />;
     };
     return <Component />;

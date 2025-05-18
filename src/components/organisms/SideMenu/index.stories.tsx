@@ -3,7 +3,7 @@ import SideMenu from './index';
 import useAppRoot from '@/states/useAppRoot';
 import { JSX } from 'react';
 
-export default {
+const meta = {
   title: 'Components/Organisms/SideMenu',
   component: SideMenu,
   tags: ['autodocs'],
@@ -13,6 +13,7 @@ export default {
     },
   },
 };
+export default meta
 
 export const Default: { render: () => JSX.Element } = {
   render: () => {

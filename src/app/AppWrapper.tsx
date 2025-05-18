@@ -1,10 +1,10 @@
 'use client';
 
-import { ReactNode } from 'react';
 import { AppProvider } from '@/states/AppContext';
+import {JSX} from 'react';
 
 type Props = {
-  children: ReactNode;
+  children: JSX.Element;
 };
 
 export default function AppWrapper({ children }: Props) {

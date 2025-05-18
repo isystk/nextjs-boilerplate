@@ -12,7 +12,7 @@ type Props = {
 
 const Carousel = ({ images, className, autoPlay = false, autoPlayInterval = 3000 }: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const timerRef = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | number | null>(null);
 
   const nextSlide = () => {
     setCurrentSlide(prev => (prev + 1) % images.length);

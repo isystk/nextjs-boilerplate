@@ -2,7 +2,7 @@ import React from 'react';
 import ScrollTopButton from './index';
 import type { StoryFn } from '@storybook/react';
 
-export default {
+const meta = {
   title: 'Components/Interactions/ScrollTopButton',
   component: ScrollTopButton,
   parameters: {
@@ -10,6 +10,7 @@ export default {
   },
   tags: ['autodocs'],
 };
+export default meta
 
 export const Default: StoryFn = () => {
   return (

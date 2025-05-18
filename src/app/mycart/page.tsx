@@ -7,7 +7,6 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentModal from '@/components/molecules/PaymentModal';
 import Env from '@/constants/env';
-import AuthCheck from '@/components/interactions/AuthCheck';
 
 const stripePromise = loadStripe(Env.STRIPE_KEY);
 
@@ -70,4 +69,4 @@ const MyCart = () => {
   );
 };
 
-export default () => <AuthCheck component={<MyCart />} />;
+export default MyCart

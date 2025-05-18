@@ -19,7 +19,7 @@ const CartItem = ({ id, name, imgpath, price, detail }: Props) => {
 
   const [isShowDeleteConfirm, setIsShowDeleteConfirm] = useState(false);
 
-  if (!state) return <></>;
+  if (!state || !service) return <></>;
   const handleDeleteFromCart = async () => {
     await service.cart.removeCart(id);
     await service.cart.readCarts();
