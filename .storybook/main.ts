@@ -23,6 +23,8 @@ const config: StorybookConfig = {
       alias: {
         ...(config.resolve?.alias || {}),
         '@': path.resolve(__dirname, '../src'),
+        // Next.jsのApp Routerをmock
+        'next/navigation': path.resolve(__dirname, './mocks/navigation.ts'),
       },
     };
     return config;
