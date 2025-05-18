@@ -1,3 +1,4 @@
+import React from 'react';
 import FlashMessage, { MessageTypes } from './index';
 import type { Meta, StoryFn } from '@storybook/react';
 

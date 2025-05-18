@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState, ChangeEvent } from 'react';
 import styles from './styles.module.scss';
 import Image from '@/components/atoms/Image';

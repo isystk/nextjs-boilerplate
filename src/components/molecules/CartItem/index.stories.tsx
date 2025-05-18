@@ -1,3 +1,4 @@
+import React from 'react';
 import CartItem from './index';
 import { JSX } from 'react';
 

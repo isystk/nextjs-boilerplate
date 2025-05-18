@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import styles from './styles.module.scss';
 import HamburgerButton from '@/components/atoms/HamburgerButton';

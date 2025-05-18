@@ -1,3 +1,4 @@
+import React from 'react';
 import PaymentModal from './index';
 import { JSX } from 'react';
 import { Elements } from '@stripe/react-stripe-js';

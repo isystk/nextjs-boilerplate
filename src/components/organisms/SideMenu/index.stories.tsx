@@ -1,3 +1,4 @@
+import React from 'react';
 import SideMenu from './index';
 import useAppRoot from '@/states/useAppRoot';
 import { JSX } from 'react';

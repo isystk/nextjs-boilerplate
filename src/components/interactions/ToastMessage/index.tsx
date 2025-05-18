@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './styles.module.scss';
 import Modal from '@/components/interactions/Modal';
 import { useEffect, useRef } from 'react';

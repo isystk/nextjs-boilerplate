@@ -1,3 +1,4 @@
+import React from 'react';
 import StockItem from './index';
 import { JSX, useEffect } from 'react';
 import useAppRoot from '@/states/useAppRoot';
@@ -37,6 +38,10 @@ export const Logined: { render: () => JSX.Element } = {
       const { state, service } = useAppRoot();
 
       useEffect(() => {
+        if (!service) {
+          return
+        }
+
         service.auth.setUser({
           id: 1,
           name: 'ユーザー名',
@@ -54,8 +59,12 @@ export const Logined: { render: () => JSX.Element } = {
         quantity: 3,
         isLike: false,
       };
+      
+      if (!state || !service) {
+        return <></>
+      }
 
-      return state && <StockItem {...props} />;
+      return <StockItem {...props} />;
     };
     return <Component />;
   },

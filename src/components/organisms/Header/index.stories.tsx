@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from './index';
 import { JSX, useEffect } from 'react';
 import useAppRoot from '@/states/useAppRoot';
@@ -19,6 +20,9 @@ export const Login: { render: () => JSX.Element } = {
       const { state, service } = useAppRoot();
 
       useEffect(() => {
+        if (!service) {
+          return;
+        }
         service.auth.setUser({
           id: 1,
           name: 'ユーザー名',
@@ -27,7 +31,7 @@ export const Login: { render: () => JSX.Element } = {
         } as User);
       }, [service]);
 
-      if (!state) {
+      if (!state || !service) {
         return <></>;
       }
 

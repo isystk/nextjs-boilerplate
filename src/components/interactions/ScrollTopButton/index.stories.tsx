@@ -1,3 +1,4 @@
+import React from 'react';
 import ScrollTopButton from './index';
 import type { StoryFn } from '@storybook/react';
 

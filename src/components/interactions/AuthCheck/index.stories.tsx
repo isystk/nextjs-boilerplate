@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 import AuthCheck from './index';
 import useAppRoot from '@/states/useAppRoot';
@@ -14,6 +15,9 @@ export const LoggedInVerified: StoryFn = () => {
   const Component = () => {
     const { state, service } = useAppRoot();
     useEffect(() => {
+      if (!service) {
+        return
+      }
       service.auth.setUser({
         id: 1,
         name: 'John Doe',
@@ -22,7 +26,7 @@ export const LoggedInVerified: StoryFn = () => {
       } as User);
     }, [service]);
 
-    if (!state) {
+    if (!state || !service) {
       return <></>;
     }
     return <div>Protected Content</div>;
@@ -36,6 +40,9 @@ export const NotVerified: StoryFn = () => {
   const Component = () => {
     const { state, service } = useAppRoot();
     useEffect(() => {
+      if (!service) {
+        return
+      }
       service.auth.setUser({
         id: 2,
         name: 'Jane Doe',
@@ -43,7 +50,7 @@ export const NotVerified: StoryFn = () => {
         email_verified_at: null,
       } as User);
     }, [service]);
-    if (!state) {
+    if (!state || !service) {
       return <></>;
     }
     return <div>Protected Content</div>;

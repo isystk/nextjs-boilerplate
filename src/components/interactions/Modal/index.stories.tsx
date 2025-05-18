@@ -1,3 +1,4 @@
+import React from 'react';
 import { JSX, useState } from 'react';
 import Modal from './index';
 import type { Meta, StoryFn } from '@storybook/react';

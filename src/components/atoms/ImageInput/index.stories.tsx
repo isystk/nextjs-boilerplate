@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import ImageInput from './index';
 import type { Meta, StoryFn } from '@storybook/react';

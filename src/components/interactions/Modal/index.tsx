@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './styles.module.scss';
 import Portal from '@/components/interactions/Portal';
 import { JSX } from 'react';

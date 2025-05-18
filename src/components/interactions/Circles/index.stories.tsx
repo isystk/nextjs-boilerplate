@@ -1,3 +1,4 @@
+import React from 'react';
 import Circles from './index';
 import type { Meta, StoryFn } from '@storybook/react';
 
