@@ -1,13 +1,12 @@
 'use client';
-import React from 'react';
+import React, { JSX } from 'react';
 import { redirect } from 'next/navigation';
 import { Url } from '@/constants/url';
-import { ReactNode } from 'react';
 import { User } from '@/states/auth';
 
 type Props = {
   user: User;
-  component: ReactNode;
+  component: JSX.Element;
 };
 
 const AuthCheck = ({ user, component }: Props) => {

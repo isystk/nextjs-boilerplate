@@ -1,6 +1,6 @@
 import '@/assets/styles/app.scss';
-import AppWrapper from './AppWrapper';
 import { JSX } from 'react';
+import { AppProvider } from '@/states/AppContext';
 
 type Props = {
   children: JSX.Element;
@@ -11,7 +11,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="ja">
       <head />
       <body>
-        <AppWrapper>{children}</AppWrapper>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

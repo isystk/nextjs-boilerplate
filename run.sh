@@ -44,9 +44,7 @@ case ${1} in
         # 停止＆削除（コンテナ・イメージ・ボリューム）
         pushd $DOCKER_HOME
         docker compose down --rmi all --volumes
-        rm -Rf ./apache/logs && mkdir ./apache/logs && chmod 777 ./apache/logs
-        rm -Rf ./php/logs && mkdir ./php/logs && chmod 777 ./php/logs
-        rm -Rf ./node_modules
+        rm -Rf ../node_modules
         popd
     ;;
 

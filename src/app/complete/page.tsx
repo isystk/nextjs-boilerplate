@@ -3,8 +3,10 @@ import { Url } from '@/constants/url';
 import Link from 'next/link';
 import BasicLayout from '@/components/templates/BasicLayout';
 import useAppRoot from '@/states/useAppRoot';
+import AuthCheck from '@/components/interactions/AuthCheck';
+import { User } from '@/states/auth';
 
-const ShopComplete = () => {
+const Component = () => {
   const { state } = useAppRoot();
 
   if (!state) return <></>;
@@ -29,6 +31,11 @@ const ShopComplete = () => {
       </div>
     </BasicLayout>
   );
+};
+
+const ShopComplete = () => {
+  // TODO 認証情報を渡す
+  return <AuthCheck user={{} as User} component={<Component />} />;
 };
 
 export default ShopComplete;
