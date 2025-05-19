@@ -13,20 +13,7 @@ import SelectBox from '@/components/atoms/SelectBox';
 import TextArea from '@/components/atoms/TextArea';
 import ImageInput from '@/components/atoms/ImageInput';
 import noImage from '@/assets/images/no_image.png';
-
-type ContactFormValues = {
-  user_name: string;
-  email: string;
-  gender: string;
-  age: string;
-  title: string;
-  contact: string;
-  url: string;
-  imageBase64_1: string;
-  imageBase64_2: string;
-  imageBase64_3: string;
-  caution: string[];
-};
+import {ContactForm} from '@/services/contact';
 
 const ContactCreate = () => {
   const { state, service } = useAppRoot();
@@ -36,7 +23,7 @@ const ContactCreate = () => {
   const auth = state.auth;
   const { age, gender } = state.const;
 
-  const handleSubmit = async (values: ContactFormValues) => {
+  const handleSubmit = async (values: ContactForm) => {
     if (!service) {
       return;
     }
