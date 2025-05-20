@@ -12,7 +12,7 @@ type EnvType = {
 let Env = {
   APP_NAME: 'LaraEC',
   ENV_NAME: 'local',
-  ENDPOINT_URL: 'https://laraec.isystk.com/api',
+  ENDPOINT_URL: 'https://localhost/api',
   STRIPE_KEY: process.env.NEXT_PUBLIC_STRIPE_KEY,
 } as EnvType;
 if (process.env.NEXT_PUBLIC_ENV_NAME === 'production') {

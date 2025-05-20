@@ -7,9 +7,9 @@ const getBffUrl = (path: string): string => {
 /** API のエンドポイント */
 export const Api = {
   /** ログイン状態チェック */
-  LOGIN_CHECK: getBffUrl('/session'),
+  LOGIN_CHECK: getBffUrl('/authenticate'),
   /** ログイン */
-  LOGIN: getBffUrl('/authenticate'),
+  LOGIN: getBffUrl('/login'),
   /** ログアウト */
   LOGOUT: getBffUrl('/logout'),
   /** 共通定数 */

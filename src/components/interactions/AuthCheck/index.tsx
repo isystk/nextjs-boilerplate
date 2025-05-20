@@ -1,26 +1,52 @@
 'use client';
-import React, { JSX } from 'react';
+import React, {JSX, useEffect, useState} from 'react';
 import { redirect } from 'next/navigation';
 import { Url } from '@/constants/url';
 import { User } from '@/states/auth';
+import useAppRoot from '@/states/useAppRoot';
 
 type Props = {
-  user: User;
+  user?: User;
   component: JSX.Element;
 };
 
-const AuthCheck = ({ user, component }: Props) => {
-  // ログインしてなければログイン画面へとばす
-  if (!user.id) {
-    return redirect(Url.LOGIN);
+const AuthCheck = ({ component }: Props) => {
+  const { state, service } = useAppRoot();
+  const [checking, setChecking] = useState(true); // ローディング管理
+  const { userId, emailVerifiedAt } = state?.auth || {};
+
+  useEffect(() => {
+    if (userId) {
+      setChecking(false);
+      return
+    }
+    const check = async () => {
+      try {
+        await service.auth.loginCheck();
+      } catch (e) {
+        // ログインチェックで失敗した場合ログインページへ
+        redirect(Url.LOGIN);
+      } finally {
+        setChecking(false);
+      }
+    };
+    check();
+  }, [userId, service]);
+
+  if (checking) {
+    return <p></p>;
   }
 
-  // 新規会員登録後、メール確認が未完了の場合
-  if (!user.email_verified_at) {
-    return redirect(Url.EMAIL_VERIFY);
+  if (!userId) {
+    redirect(Url.LOGIN);
+    return null;
   }
 
-  // ログイン済みの場合
+  if (!emailVerifiedAt) {
+    redirect(Url.EMAIL_VERIFY);
+    return null;
+  }
+
   return <>{component}</>;
 };
 

@@ -1,5 +1,5 @@
 import '@/assets/styles/app.scss';
-import { JSX } from 'react';
+import {JSX} from 'react';
 import { AppProvider } from '@/states/AppContext';
 
 type Props = {

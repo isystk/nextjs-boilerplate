@@ -4,7 +4,6 @@ import Link from 'next/link';
 import BasicLayout from '@/components/templates/BasicLayout';
 import useAppRoot from '@/states/useAppRoot';
 import AuthCheck from '@/components/interactions/AuthCheck';
-import { User } from '@/states/auth';
 
 const Component = () => {
   const { state } = useAppRoot();
@@ -34,8 +33,7 @@ const Component = () => {
 };
 
 const ShopComplete = () => {
-  // TODO 認証情報を渡す
-  return <AuthCheck user={{} as User} component={<Component />} />;
+  return <AuthCheck component={<Component />} />;
 };
 
 export default ShopComplete;

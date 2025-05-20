@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import { useAppState, useAppDispatch } from '@/states/AppContext';
 import MainService from '@/services/main';
 import RootState from '@/states/root';
@@ -16,20 +16,22 @@ const useAppRoot = () => {
     [dispatch],
   );
 
-  // useEffect(() => {
-  //   if (!state) {
-  //     const initialState = new RootState();
-  //     setRootState(initialState);
-  //     setService(new MainService(initialState, setRootState));
-  //   } else {
-  //     setService(new MainService(state, setRootState));
-  //   }
-  // }, [state, setRootState]);
-
   const service = useMemo(() => {
     const effectiveState = state ?? new RootState();
     return new MainService(effectiveState, setRootState);
   }, [state, setRootState]);
+
+  const { userId } = state?.auth || {};
+  useEffect(() => {
+    if (userId) {
+      return
+    }
+    const check = async () => {
+      await service.auth.loginCheck();
+      await service.const.readConsts();
+    };
+    check();
+  }, [userId, service]);
 
   return { state, service };
 };

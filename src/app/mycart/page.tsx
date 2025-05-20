@@ -8,7 +8,6 @@ import { loadStripe } from '@stripe/stripe-js';
 import PaymentModal from '@/components/molecules/PaymentModal';
 import Env from '@/constants/env';
 import AuthCheck from '@/components/interactions/AuthCheck';
-import { User } from '@/states/auth';
 
 const stripePromise = loadStripe(Env.STRIPE_KEY);
 
@@ -72,8 +71,7 @@ const Component = () => {
 };
 
 const MyCart = () => {
-  // TODO 認証情報を渡す
-  return <AuthCheck user={{} as User} component={<Component />} />;
+  return <AuthCheck component={<Component />} />;
 };
 
 export default MyCart;
