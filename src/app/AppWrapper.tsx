@@ -13,7 +13,7 @@ export default function AppWrapper({ children }: Props) {
 
   const { userId } = state?.auth || {};
   useEffect(() => {
-    if (userId) {
+    if (userId || !service) {
       return;
     }
     const check = async () => {

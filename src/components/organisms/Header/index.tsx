@@ -15,7 +15,7 @@ const Header = () => {
   const { state, service } = useAppRoot();
   const router = useRouter();
 
-  if (!state) return <></>;
+  if (!state || !service) return <></>;
   const { isLogined, name } = state.auth;
 
   return (

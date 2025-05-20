@@ -32,6 +32,9 @@ const LoginForm = () => {
   const { state, service } = useAppRoot();
 
   const handleSubmit = async () => {
+    if (!service) {
+      return
+    }
     const email = document.getElementById('email') as HTMLInputElement;
     const password = document.getElementById('password') as HTMLInputElement;
     const values = {
