@@ -44,18 +44,18 @@ const PaymentModal = ({ isOpen, handleClose, amount }: Props) => {
     }
 
     // 決算処理を行う
-    await service.cart.payment({stripe, elements, amount, username});
+    await service.cart.payment({ stripe, elements, amount, username });
     // 完了画面を表示する
     router.push(Url.PAY_COMPLETE);
   };
-  
-  const initialValues={
+
+  const initialValues = {
     amount: amount,
     username: state.auth.email,
     cardNumber: '',
     cardExp: '',
     cardCvc: '',
-  } as FormValues
+  } as FormValues;
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>

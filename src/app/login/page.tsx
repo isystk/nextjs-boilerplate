@@ -5,7 +5,7 @@ import BasicLayout from '@/components/templates/BasicLayout';
 import useAppRoot from '@/states/useAppRoot';
 import Link from 'next/link';
 import TextInput from '@/components/atoms/TextInput';
-import { type LoginForm} from '@/services/auth'
+import { type LoginForm } from '@/services/auth';
 import { redirect } from 'next/navigation';
 
 // TODO react-google-recaptcha-v3 が react19では未だサポートされていないのでコメントアウト
@@ -30,14 +30,14 @@ import { redirect } from 'next/navigation';
 
 const LoginForm = () => {
   const { state, service } = useAppRoot();
-  
+
   const handleSubmit = async () => {
-    const email = document.getElementById("email") as HTMLInputElement;
-    const password = document.getElementById("password") as HTMLInputElement;
+    const email = document.getElementById('email') as HTMLInputElement;
+    const password = document.getElementById('password') as HTMLInputElement;
     const values = {
       email: email.value,
       password: password.value,
-    } as LoginForm
+    } as LoginForm;
     await service.auth.login(values);
     redirect(Url.HOME);
   };

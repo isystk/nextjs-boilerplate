@@ -1,14 +1,14 @@
 import MainService from '@/services/main';
 import { Api } from '@/constants/api';
 import CartState from '@/states/cart';
-import * as stripeJs from "@stripe/stripe-js";
+import * as stripeJs from '@stripe/stripe-js';
 
 export type PaymentForm = {
-  stripe: stripeJs.Stripe, 
-  elements: stripeJs.StripeElements, 
-  amount: number, 
-  username: string
-}
+  stripe: stripeJs.Stripe;
+  elements: stripeJs.StripeElements;
+  amount: number;
+  username: string;
+};
 
 export default class CartService {
   main: MainService;
@@ -26,7 +26,7 @@ export default class CartService {
       const response = await fetch(Api.MYCART, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',
@@ -50,7 +50,7 @@ export default class CartService {
       const response = await fetch(Api.MYCART_ADD, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',
@@ -77,7 +77,7 @@ export default class CartService {
       const response = await fetch(Api.MYCART_DELETE, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',
@@ -97,7 +97,7 @@ export default class CartService {
     }
   }
 
-  async payment({stripe, elements, amount, username}: PaymentForm): Promise<void> {
+  async payment({ stripe, elements, amount, username }: PaymentForm): Promise<void> {
     this.main.showLoading();
     const token = localStorage.getItem('token');
     try {
@@ -105,7 +105,7 @@ export default class CartService {
       const response = await fetch(Api.MYCART_PAYMENT, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',
@@ -134,7 +134,7 @@ export default class CartService {
       await fetch(Api.MYCART_CHECKOUT, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',

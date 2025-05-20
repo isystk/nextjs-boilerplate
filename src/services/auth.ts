@@ -1,6 +1,6 @@
 import MainService from '@/services/main';
 import AuthState, { type User } from '@/states/auth';
-import {Api} from '@/constants/api';
+import { Api } from '@/constants/api';
 
 export type LoginForm = {
   email: string;
@@ -30,7 +30,7 @@ export default class AuthService {
   async login(values: LoginForm): Promise<void> {
     this.main.showLoading();
     try {
-      console.log({values})
+      console.log({ values });
       const response = await fetch(Api.LOGIN, {
         method: 'POST',
         headers: {
@@ -39,7 +39,7 @@ export default class AuthService {
         credentials: 'include',
         body: JSON.stringify(values),
       });
-      const {token} = await response.json();
+      const { token } = await response.json();
       localStorage.setItem('token', token);
     } catch (e) {
       this.main.showToastMessage('ログインに失敗しました');
@@ -59,12 +59,12 @@ export default class AuthService {
       const response = await fetch(Api.LOGIN_CHECK, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         credentials: 'include',
       });
       const user = await response.json();
-      this.setUser(user)
+      this.setUser(user);
     } catch {
       // 未ログインの場合
     } finally {
@@ -82,13 +82,13 @@ export default class AuthService {
       const response = await fetch(Api.LOGOUT, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',
       });
       await response.json();
-      this.setUser({} as User)
+      this.setUser({} as User);
     } catch (e) {
       this.main.showToastMessage('ログアウトに失敗しました');
       throw e;

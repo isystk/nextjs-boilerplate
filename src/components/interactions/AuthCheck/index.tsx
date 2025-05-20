@@ -1,5 +1,5 @@
 'use client';
-import React, {JSX, useEffect, useState} from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
 import { Url } from '@/constants/url';
 import { User } from '@/states/auth';
@@ -16,9 +16,12 @@ const AuthCheck = ({ component }: Props) => {
   const { userId, emailVerifiedAt } = state?.auth || {};
 
   useEffect(() => {
+    if (!service) {
+      return;
+    }
     if (userId) {
       setChecking(false);
-      return
+      return;
     }
     const check = async () => {
       try {
