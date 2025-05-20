@@ -65,9 +65,8 @@ export default class AuthService {
       });
       const user = await response.json();
       this.setUser(user)
-    } catch (e) {
-      this.main.showToastMessage('ログインチェックに失敗しました');
-      throw e;
+    } catch {
+      // 未ログインの場合
     } finally {
       this.main.hideLoading();
     }
