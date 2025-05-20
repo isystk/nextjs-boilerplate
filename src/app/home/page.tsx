@@ -2,7 +2,6 @@
 import SessionAlert from '@/components/atoms/SessionAlert';
 import BasicLayout from '@/components/templates/BasicLayout';
 import AuthCheck from '@/components/interactions/AuthCheck';
-import { User } from '@/states/auth';
 
 const Component = () => (
   <BasicLayout title="ダッシュボード">
@@ -14,8 +13,7 @@ const Component = () => (
 );
 
 const Home = () => {
-  // TODO 認証情報を渡す
-  return <AuthCheck user={{} as User} component={<Component />} />;
+  return <AuthCheck component={<Component />} />;
 };
 
 export default Home;

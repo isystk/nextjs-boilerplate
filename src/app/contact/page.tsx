@@ -13,7 +13,7 @@ import SelectBox from '@/components/atoms/SelectBox';
 import TextArea from '@/components/atoms/TextArea';
 import ImageInput from '@/components/atoms/ImageInput';
 import noImage from '@/assets/images/no_image.png';
-import {ContactForm} from '@/services/contact';
+import { ContactForm } from '@/services/contact';
 
 const ContactCreate = () => {
   const { state, service } = useAppRoot();

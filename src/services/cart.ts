@@ -1,14 +1,14 @@
 import MainService from '@/services/main';
 import { Api } from '@/constants/api';
 import CartState from '@/states/cart';
-import * as stripeJs from "@stripe/stripe-js";
+import * as stripeJs from '@stripe/stripe-js';
 
 export type PaymentForm = {
-  stripe: stripeJs.Stripe, 
-  elements: stripeJs.StripeElements, 
-  amount: number, 
-  username: string
-}
+  stripe: stripeJs.Stripe;
+  elements: stripeJs.StripeElements;
+  amount: number;
+  username: string;
+};
 
 export default class CartService {
   main: MainService;
@@ -21,12 +21,15 @@ export default class CartService {
 
   async readCarts() {
     this.main.showLoading();
+    const token = localStorage.getItem('token');
     try {
       const response = await fetch(Api.MYCART, {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
       });
       const { result, carts } = await response.json();
       if (result) {
@@ -42,12 +45,15 @@ export default class CartService {
 
   async addCart(stockId: number): Promise<void> {
     this.main.showLoading();
+    const token = localStorage.getItem('token');
     try {
       const response = await fetch(Api.MYCART_ADD, {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({
           stock_id: stockId,
         }),
@@ -66,12 +72,15 @@ export default class CartService {
 
   async removeCart(cartId: number): Promise<void> {
     this.main.showLoading();
+    const token = localStorage.getItem('token');
     try {
       const response = await fetch(Api.MYCART_DELETE, {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({
           cart_id: cartId,
         }),
@@ -88,15 +97,18 @@ export default class CartService {
     }
   }
 
-  async payment({stripe, elements, amount, username}: PaymentForm): Promise<void> {
+  async payment({ stripe, elements, amount, username }: PaymentForm): Promise<void> {
     this.main.showLoading();
+    const token = localStorage.getItem('token');
     try {
       //paymentIntentの作成を（ローカルサーバ経由で）リクエスト
       const response = await fetch(Api.MYCART_PAYMENT, {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({
           amount,
           username,
@@ -122,8 +134,10 @@ export default class CartService {
       await fetch(Api.MYCART_CHECKOUT, {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
       });
     } catch (e) {
       this.main.showToastMessage('決算処理に失敗しました');

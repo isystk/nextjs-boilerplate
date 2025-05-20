@@ -12,10 +12,10 @@ import CSRFToken from '@/components/atoms/CSRFToken';
 import cartImage from '@/assets/images/cart.png';
 
 const Header = () => {
-  const { state } = useAppRoot();
+  const { state, service } = useAppRoot();
   const router = useRouter();
 
-  if (!state) return <></>;
+  if (!state || !service) return <></>;
   const { isLogined, name } = state.auth;
 
   return (
@@ -34,13 +34,9 @@ const Header = () => {
                       items={[
                         {
                           text: 'ログアウト',
-                          onClick: () => {
-                            const element: HTMLFormElement = document.getElementById(
-                              'logout-form',
-                            ) as HTMLFormElement;
-                            if (element) {
-                              element.submit();
-                            }
+                          onClick: async () => {
+                            await service.auth.logout();
+                            router.push(Url.LOGIN);
                           },
                         },
                         {
