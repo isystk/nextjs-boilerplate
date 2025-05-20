@@ -23,7 +23,7 @@ const AuthCheck = ({ component }: Props) => {
     const check = async () => {
       try {
         await service.auth.loginCheck();
-      } catch (e) {
+      } catch {
         // ログインチェックで失敗した場合ログインページへ
         redirect(Url.LOGIN);
       } finally {

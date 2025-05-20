@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo } from 'react';
 import { useAppState, useAppDispatch } from '@/states/AppContext';
 import MainService from '@/services/main';
 import RootState from '@/states/root';
@@ -6,8 +6,6 @@ import RootState from '@/states/root';
 const useAppRoot = () => {
   const { root: state } = useAppState();
   const dispatch = useAppDispatch();
-
-  // const [service, setService] = useState<MainService | null>(null);
 
   const setRootState = useCallback(
     async (root: RootState) => {
