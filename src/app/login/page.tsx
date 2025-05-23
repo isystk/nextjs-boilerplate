@@ -33,7 +33,7 @@ const LoginForm = () => {
 
   const handleSubmit = async () => {
     if (!service) {
-      return
+      return;
     }
     const email = document.getElementById('email') as HTMLInputElement;
     const password = document.getElementById('password') as HTMLInputElement;
