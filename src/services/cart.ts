@@ -31,9 +31,9 @@ export default class CartService {
         },
         credentials: 'include',
       });
-      const { result, carts } = await response.json();
+      const result = await response.json();
       if (result) {
-        Object.assign(this.cart, carts);
+        Object.assign(this.cart, result);
       }
     } catch (e) {
       this.main.showToastMessage('マイカートの取得に失敗しました');
@@ -58,9 +58,9 @@ export default class CartService {
           stock_id: stockId,
         }),
       });
-      const { result, carts } = await response.json();
+      const result = await response.json();
       if (result) {
-        Object.assign(this.cart, carts);
+        Object.assign(this.cart, result);
       }
     } catch (e) {
       this.main.showToastMessage('マイカートの追加に失敗しました');
@@ -85,9 +85,9 @@ export default class CartService {
           cart_id: cartId,
         }),
       });
-      const { result, carts } = await response.json();
+      const result = await response.json();
       if (result) {
-        Object.assign(this.cart, carts);
+        Object.assign(this.cart, result);
       }
     } catch (e) {
       this.main.showToastMessage('マイカートの削除に失敗しました');

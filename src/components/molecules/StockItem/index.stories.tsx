@@ -20,7 +20,7 @@ export const Default: { render: () => JSX.Element } = {
       const props = {
         id: 1,
         name: 'テスト商品',
-        imgpath: 'sample.jpg',
+        imageUrl: 'https://laraec.isystk.com/uploads/stock/makaron.jpg',
         price: 1500,
         detail: '商品の説明文が入ります。',
         quantity: 3,
@@ -54,7 +54,7 @@ export const Logined: { render: () => JSX.Element } = {
       const props = {
         id: 1,
         name: 'テスト商品',
-        imgpath: 'sample.jpg',
+        imageUrl: 'https://laraec.isystk.com/uploads/stock/makaron.jpg',
         price: 1500,
         detail: '商品の説明文が入ります。',
         quantity: 3,
