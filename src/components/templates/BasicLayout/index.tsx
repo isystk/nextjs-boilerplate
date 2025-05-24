@@ -19,16 +19,8 @@ type Props = {
 const BasicLayout = ({ children, title }: Readonly<Props>) => {
   const { state, service } = useAppRoot();
 
-  // TODO React19以降では、useDocumentMetadataが追加される見込みだがそれまでは手動で直接書き換える
   useEffect(() => {
     document.title = title;
-    const metaDescription = document.querySelector("meta[name='description']");
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        'content',
-        'Laravel ＆ React.js の学習用サンプルアプリケーションです。',
-      );
-    }
   }, [title]);
 
   if (!state) return <></>;
