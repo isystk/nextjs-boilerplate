@@ -1,0 +1,106 @@
+@use "@/assets/styles/variable" as *;
+
+.news {
+  background-color: $white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contents {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 768px) {
+  .contents {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+}
+
+.newsItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.left,
+.right {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .newsItem {
+    padding: 0;
+  }
+  
+  .left {
+    width: 50%;
+    justify-content: flex-end;
+  }
+
+  .right {
+    width: 50%;
+    justify-content: flex-start;
+  }
+}
+
+.leftInner {
+  width: 100%;
+}
+
+.date {
+  color: var(--color-accent);
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-weight: bold;
+  word-break: break-word;
+  margin-bottom: 1rem;
+}
+
+.imageWrapper {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    margin-left: 1rem;
+  }
+}
+
+.divider {
+  background-color: #d1d5db;
+  height: 1px;
+  flex: none;
+}
+
+.bottomSpace {
+  margin-bottom: 9rem;
+}
+
