@@ -5,16 +5,16 @@ import { composeStories } from '@storybook/react';
 import * as stories from './index.stories';
 const { Default } = composeStories(stories);
 
-describe('StoreVisual Storybook Tests', () => {
-  it('iPhone画像が表示されること', () => {
+describe('Price Storybook Tests', () => {
+  it('「チャット回数制限あり」のテキストが含まれること', () => {
     render(<Default />);
-    const image = screen.getByAltText(/Line App/i);
-    expect(image).toBeInTheDocument();
+    const text = screen.getByText(/チャット回数制限あり/i);
+    expect(text).toBeInTheDocument();
   });
 
-  it('「リリース1ヶ月で100万人登録！」のテキストが含まれること', () => {
+  it('「チャット無制限」のテキストが含まれること', () => {
     render(<Default />);
-    const text = screen.getByText(/リリース1ヶ月で100万人登録！/);
+    const text = screen.getByText(/チャット無制限/);
     expect(text).toBeInTheDocument();
   });
 
