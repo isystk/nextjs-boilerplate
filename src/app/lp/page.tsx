@@ -3,6 +3,7 @@ import BasicLayout from '@/components/templates/BasicLayout';
 import StoreVisual from '@/components/molecules/StoreVisual';
 import Price from '@/components/molecules/Price';
 import News from '@/components/molecules/News';
+import Footer from '@/components/organisms/Footer';
 
 const LandingPage = () => {
   return (
@@ -38,6 +39,7 @@ const LandingPage = () => {
           },
         ]}
       />
+      <Footer />
     </BasicLayout>
   );
 };
