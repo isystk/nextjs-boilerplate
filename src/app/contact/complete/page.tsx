@@ -1,11 +1,11 @@
 'use client';
 import { Url } from '@/constants/url';
 import Link from 'next/link';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 
 const ContactComplete = () => {
   return (
-    <BasicLayout title="お問い合わせ完了">
+    <LaraECLayout title="お問い合わせ完了">
       <div className="bg-white p-6 rounded-md shadow-md">
         <h2 className="font-bold text-xl text-center">お問い合わせが完了しました</h2>
         <div className="text-center mt-10">
@@ -15,7 +15,7 @@ const ContactComplete = () => {
           </Link>
         </div>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import CSRFToken from '@/components/atoms/CSRFToken';
 import SessionAlert from '@/components/atoms/SessionAlert';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 import TextInput from '@/components/atoms/TextInput';
 import { useParams } from 'next/navigation';
@@ -19,7 +19,7 @@ const ResetForm = () => {
   if (!state) return <></>;
 
   return (
-    <BasicLayout title="パスワード変更">
+    <LaraECLayout title="パスワード変更">
       <div className="bg-white p-6 rounded-md shadow-md ">
         <SessionAlert target="status" />
         <form method="POST" action="/reset-password" id="login-form">
@@ -57,7 +57,7 @@ const ResetForm = () => {
           </div>
         </form>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

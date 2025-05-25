@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import CSRFToken from '@/components/atoms/CSRFToken';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 import TextInput from '@/components/atoms/TextInput';
 
@@ -12,7 +12,7 @@ const RegisterForm = () => {
 
   if (!state) return <></>;
   return (
-    <BasicLayout title="会員登録">
+    <LaraECLayout title="会員登録">
       <div className="bg-white p-6 rounded-md shadow-md ">
         <form method="POST" action="/register" id="login-form">
           <CSRFToken />
@@ -56,7 +56,7 @@ const RegisterForm = () => {
           </div>
         </form>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

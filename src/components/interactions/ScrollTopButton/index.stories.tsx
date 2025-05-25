@@ -14,7 +14,7 @@ export default meta;
 
 export const Default: StoryFn = () => {
   return (
-    <div style={{ height: '2000px', padding: '16px' }}>
+    <div style={{ height: '1000px', padding: '16px' }}>
       <p>スクロールしてボタンが表示されるのを確認してください。</p>
       <ScrollTopButton />
     </div>

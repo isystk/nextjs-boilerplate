@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import * as stories from './index.stories';
 import { composeStories } from '@storybook/react';
+import { Url } from '@/constants/url';
 
 const { Default500, NotFound404 } = composeStories(stories);
 
@@ -22,6 +23,6 @@ describe('ErrorPage', () => {
   it('ホームに戻るリンクをクリックすうるとTop画面に遷移すること', () => {
     render(<Default500 />);
     const link = screen.getByRole('link', { name: 'ホームに戻る' });
-    expect(link).toHaveAttribute('href', '/'); // Url.top が '/' の想定
+    expect(link).toHaveAttribute('href', Url.TOP); // Url.top が '/' の想定
   });
 });

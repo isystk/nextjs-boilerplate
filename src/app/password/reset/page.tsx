@@ -1,7 +1,7 @@
 'use client';
 import CSRFToken from '@/components/atoms/CSRFToken';
 import SessionAlert from '@/components/atoms/SessionAlert';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 import TextInput from '@/components/atoms/TextInput';
 
@@ -10,7 +10,7 @@ const ResetForm = () => {
   if (!state) return <></>;
 
   return (
-    <BasicLayout title="パスワードリセット">
+    <LaraECLayout title="パスワードリセット">
       <div className="bg-white p-6 rounded-md shadow-md ">
         <form method="POST" action="/forgot-password" id="login-form">
           <CSRFToken />
@@ -31,7 +31,7 @@ const ResetForm = () => {
           </div>
         </form>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 
