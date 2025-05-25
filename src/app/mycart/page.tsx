@@ -1,7 +1,7 @@
 'use client';
 import useAppRoot from '@/states/useAppRoot';
 import { useEffect, useState } from 'react';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import CartItem from '@/components/molecules/CartItem';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -25,7 +25,7 @@ const Component = () => {
   const { stocks, message, count, sum } = state.cart;
 
   return (
-    <BasicLayout title="マイカート">
+    <LaraECLayout title="マイカート">
       <div className="bg-gray-100 p-6 rounded-md shadow-md">
         <h2 className="text-center font-bold text-2xl">{name}さんのカートの中身</h2>
         <div className="mt-10">
@@ -66,7 +66,7 @@ const Component = () => {
           )}
         </div>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

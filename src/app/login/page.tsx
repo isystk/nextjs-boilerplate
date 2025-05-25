@@ -1,7 +1,7 @@
 'use client';
 import CSRFToken from '@/components/atoms/CSRFToken';
 import { Url } from '@/constants/url';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 import Link from 'next/link';
 import TextInput from '@/components/atoms/TextInput';
@@ -48,7 +48,7 @@ const LoginForm = () => {
   if (!state) return <></>;
 
   return (
-    <BasicLayout title="ログイン">
+    <LaraECLayout title="ログイン">
       <div className="bg-white p-6 rounded-md shadow-md">
         <div className="text-center mb-3">
           <form method="GET" action={Url.AUTH_GOOGLE}>
@@ -105,7 +105,7 @@ const LoginForm = () => {
           </div>
         </form>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

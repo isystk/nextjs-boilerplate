@@ -5,7 +5,7 @@ import CSRFToken from '@/components/atoms/CSRFToken';
 import { KeyValue } from '@/states/const';
 import { useRouter } from 'next/navigation';
 import { Url } from '@/constants/url';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 import TextInput from '@/components/atoms/TextInput';
 import SelectionInput from '@/components/atoms/SelectionInput';
@@ -70,7 +70,7 @@ const ContactCreate = () => {
   });
 
   return (
-    <BasicLayout title="お問い合わせ">
+    <LaraECLayout title="お問い合わせ">
       <div className="bg-white p-6 rounded-md shadow-md">
         <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validation}>
           {({ isValid, handleChange, handleBlur, values, errors, setFieldValue }) => (
@@ -220,7 +220,7 @@ const ContactCreate = () => {
           )}
         </Formik>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

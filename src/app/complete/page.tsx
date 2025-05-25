@@ -1,7 +1,7 @@
 'use client';
 import { Url } from '@/constants/url';
 import Link from 'next/link';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 import AuthCheck from '@/components/interactions/AuthCheck';
 
@@ -12,7 +12,7 @@ const Component = () => {
   const auth = state.auth;
 
   return (
-    <BasicLayout title="商品購入完了">
+    <LaraECLayout title="商品購入完了">
       <div className="bg-white p-6 rounded-md shadow-md ">
         <h2 className="font-bold text-xl text-center">
           {auth.name}さん。ご購入ありがとうございました
@@ -28,7 +28,7 @@ const Component = () => {
           </Link>
         </div>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

@@ -6,7 +6,7 @@ import { composeStories } from '@storybook/react';
 
 const { Default } = composeStories(stories);
 
-describe('Default', async () => {
+describe('ScrollTopButton Storybook Tests', async () => {
   it('初期の状態では非表示であること', () => {
     render(<Default />);
     const button = screen.queryByRole('button');

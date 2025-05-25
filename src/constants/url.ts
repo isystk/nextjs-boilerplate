@@ -1,7 +1,7 @@
 /** 画面のURL */
 export const Url = {
   /** TOP */
-  TOP: '/',
+  TOP: '/shop',
   /** ログイン */
   LOGIN: '/login',
   /** Googleログイン */

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import Link from 'next/link';
 import { Url } from '@/constants/url';
 
@@ -23,7 +23,7 @@ const ErrorPage = ({ status = 500 }: Props) => {
   const { title, text } = errors[status] || errors[500];
 
   return (
-    <BasicLayout title={title}>
+    <LaraECLayout title={title}>
       <div className="bg-white h-100 flex items-center justify-center rounded-md shadow-md">
         <div className={styles.container}>
           <h1 className={styles.heading}>{title}</h1>
@@ -33,7 +33,7 @@ const ErrorPage = ({ status = 500 }: Props) => {
           </Link>
         </div>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 

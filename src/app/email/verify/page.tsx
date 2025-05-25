@@ -1,7 +1,7 @@
 'use client';
 import SessionAlert from '@/components/atoms/SessionAlert';
 import CSRFToken from '@/components/atoms/CSRFToken';
-import BasicLayout from '@/components/templates/BasicLayout';
+import LaraECLayout from '@/components/templates/LaraECLayout';
 import useAppRoot from '@/states/useAppRoot';
 
 const Verify = () => {
@@ -10,7 +10,7 @@ const Verify = () => {
   if (!state) return <></>;
 
   return (
-    <BasicLayout title="メールを確認してください">
+    <LaraECLayout title="メールを確認してください">
       <div className="bg-white p-6 rounded-md shadow-md ">
         <SessionAlert target="resent" />
         確認用リンクが記載されたメールをご確認ください。メールが届いていない場合は{' '}
@@ -38,7 +38,7 @@ const Verify = () => {
           <CSRFToken />
         </form>
       </div>
-    </BasicLayout>
+    </LaraECLayout>
   );
 };
 
