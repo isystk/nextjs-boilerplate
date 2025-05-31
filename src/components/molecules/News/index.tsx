@@ -25,24 +25,26 @@ const News = ({ items = [] }: Props) => {
         </ScrollIn>
         <div className={styles.contents}>
           {items.map(({ title, text, date, imageUrl }, index) => (
-            <ScrollIn key={index}>
-              <div className={styles.newsItem}>
+            <ScrollIn key={index} className={styles.newsItem}>
+              <>
                 <div className={styles.left}>
                   <div className={styles.leftInner}>
-                    <p className={styles.date}>
-                      {date}
-                      <br />
-                      {title}
-                    </p>
+                    <div className={styles.titleDateWrapper}>
+                      <p className={styles.itemTitle}>{title}</p>
+                      <p className={styles.itemDate}>{date}</p>
+                    </div>
                     <p className={styles.text}>{text}</p>
                   </div>
                 </div>
                 <div className={styles.right}>
-                  <div className={styles.imageWrapper}>
-                    <Image src={imageUrl || dummyImage480x320.src} alt="dummy" />
-                  </div>
+                  <Image
+                    src={imageUrl || dummyImage480x320.src}
+                    alt={title}
+                    zoom={true}
+                    className={styles.image}
+                  />
                 </div>
-              </div>
+              </>
             </ScrollIn>
           ))}
           <div className={styles.bottomSpace}></div>
