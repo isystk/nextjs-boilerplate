@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { ReactNode, useEffect } from 'react';
-import Circles from '@/components/interactions/Circles';
 import Loading from '@/components/atoms/Loading';
 import useAppRoot from '@/states/useAppRoot';
 import { ErrorBoundary } from '@/components/interactions/ErrorBoundary';
@@ -24,9 +23,7 @@ const LaraECLayout = ({ children, title }: Readonly<Props>) => {
 
   return (
     <ErrorBoundary>
-      <Circles>
-        <main className={styles.content}>{children}</main>
-      </Circles>
+      <main className={styles.content}>{children}</main>
       <ScrollTopButton />
       <Loading />
     </ErrorBoundary>
