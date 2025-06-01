@@ -1,12 +1,14 @@
-import { useRef, useEffect } from "react";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { useRef, useEffect } from 'react';
+import * as THREE from 'three';
+// @ts-ignore
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default function Globe() {
-  const mountRef = useRef(null);
+  const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = mountRef.current;
+    if (!container) return;
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffffff);
@@ -15,7 +17,7 @@ export default function Globe() {
       45,
       container.clientWidth / container.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 3;
 
@@ -56,17 +58,17 @@ export default function Globe() {
       renderer.setSize(container.clientWidth, container.clientHeight);
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
       container.removeChild(renderer.domElement);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
     <div
       ref={mountRef}
-      style={{ width: "500px", height: "500px", overflow: "hidden", cursor: "grab" }}
+      style={{ width: '500px', height: '500px', overflow: 'hidden', cursor: 'grab' }}
     />
   );
 }
