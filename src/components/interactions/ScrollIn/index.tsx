@@ -5,32 +5,41 @@ type Props = {
   children: JSX.Element;
   className?: string;
   delay?: string;
+  direction?: 'left' | 'right' | 'bottom';
 };
 
-const ScrollIn = ({ children, className = '', delay = '0s' }: Props) => {
-  const myRef = useRef<HTMLDivElement | null>(null);
+const ScrollIn = ({ children, className = '', delay = '0s', direction = 'bottom' }: Props) => {
+  const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      const element = myRef.current;
-      if (!element || isVisible) return;
+    const checkVisibility = () => {
+      const el = ref.current;
+      if (!el) return;
 
-      const rect = element.getBoundingClientRect();
+      const rect = el.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      if (rect.top < windowHeight - 100) {
+      if (rect.top < windowHeight - 100 && rect.bottom > 0) {
+        // 画面内に入った → 表示
         setIsVisible(true);
+      } else {
+        // 画面外に出た → 非表示（リセット）
+        setIsVisible(false);
       }
     };
 
-    window.addEventListener('scroll', onScroll);
-    onScroll();
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+
+    // 初期チェック
+    checkVisibility();
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', checkVisibility);
+      window.removeEventListener('resize', checkVisibility);
     };
-  }, [isVisible]);
+  }, []);
 
   const style = isVisible
     ? {
@@ -40,8 +49,10 @@ const ScrollIn = ({ children, className = '', delay = '0s' }: Props) => {
 
   return (
     <div
-      ref={myRef}
-      className={`${className} ${styles.scrollInBase} ${isVisible ? styles.animated : ''} ${isVisible ? 'show' : ''}`}
+      ref={ref}
+      className={`${className} ${styles.scrollInBase} ${
+        isVisible ? styles.animated : ''
+      } ${isVisible ? styles[direction] : ''}`}
       style={style}
     >
       {children}
