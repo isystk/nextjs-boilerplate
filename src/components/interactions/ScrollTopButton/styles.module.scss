@@ -1,6 +1,6 @@
 @use "@/assets/styles/variable" as *;
 
-.button {
+.button-light {
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
@@ -12,12 +12,21 @@
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
     z-index: 1000;
+
+    span {
+        margin: auto;
+        font-weight: bold;
+        color: $dark-gray;
+    }
 }
 
-.buttonLabel {
-    margin: auto;
-    font-weight: bold;
-    color: $dark-gray;
+.button-dark {
+    @extend .button-light;
+    background-color: $dark-gray;
+
+    span {
+        color: $white;
+    }
 }
 
 .show {

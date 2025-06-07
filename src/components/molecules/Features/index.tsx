@@ -11,7 +11,7 @@ const Features = () => {
       <ParallaxSticky height="200vh" top="200px">
         <div className={styles.featureBoxes}>
           <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} delay="0s" direction="left">
+            <ScrollIn className={styles.featureCard} direction="left">
               <div className={styles.scrollCardRight}>
                 <p className={styles.cardTitle}>シンプル操作で誰でも使える</p>
                 <p>
@@ -21,7 +21,7 @@ const Features = () => {
             </ScrollIn>
           </div>
           <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} delay="1s" direction="right">
+            <ScrollIn className={styles.featureCard} direction="right">
               <div className={styles.scrollCardLeft}>
                 <Image
                   src="https://picsum.photos/600/400"
@@ -37,7 +37,7 @@ const Features = () => {
       <ParallaxSticky height="200vh" top="200px">
         <div className={`${styles.featureBoxes} md:flex-row-reverse `}>
           <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} delay="0s" direction="right">
+            <ScrollIn className={styles.featureCard} direction="right">
               <div className={styles.scrollCardRight}>
                 <p className={styles.cardTitle}>24時間いつでも対応</p>
                 <p>
@@ -47,7 +47,7 @@ const Features = () => {
             </ScrollIn>
           </div>
           <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} delay="1s" direction="left">
+            <ScrollIn className={styles.featureCard} direction="left">
               <div className={styles.scrollCardLeft}>
                 <Image
                   src="https://picsum.photos/600/400"
@@ -63,7 +63,7 @@ const Features = () => {
       <ParallaxSticky height="200vh" top="200px">
         <div className={styles.featureBoxes}>
           <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} delay="0s" direction="left">
+            <ScrollIn className={styles.featureCard} direction="left">
               <div className={styles.scrollCardRight}>
                 <p className={styles.cardTitle}>高精度AIで安心の回答</p>
                 <p>
@@ -73,7 +73,7 @@ const Features = () => {
             </ScrollIn>
           </div>
           <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} delay="1s" direction="right">
+            <ScrollIn className={styles.featureCard} direction="right">
               <div className={styles.scrollCardLeft}>
                 <Image
                   src="https://picsum.photos/600/400"
@@ -89,7 +89,7 @@ const Features = () => {
       <ParallaxSticky height="160vh" top="200px">
         <div className={`${styles.featureBoxes} md:flex-row-reverse`}>
           <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} delay="0s" direction="right">
+            <ScrollIn className={styles.featureCard} direction="right">
               <div className={styles.scrollCardRight}>
                 <p className={styles.cardTitle}>プライバシーにも配慮</p>
                 <p>
@@ -99,7 +99,7 @@ const Features = () => {
             </ScrollIn>
           </div>
           <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} delay="1s" direction="left">
+            <ScrollIn className={styles.featureCard} direction="left">
               <div className={styles.scrollCardLeft}>
                 <Image
                   src="https://picsum.photos/600/400"
