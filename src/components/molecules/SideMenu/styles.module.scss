@@ -1,0 +1,13 @@
+@use '@/assets/styles/variable' as *;
+
+.sideMenu {
+  background-color: $gray;
+  color: $black;
+  padding: 10px;
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
