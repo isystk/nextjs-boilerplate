@@ -26,6 +26,14 @@ const Index = () => {
                   📄 Landing Page
                 </a>
               </li>
+              <li>
+                <a
+                  href="/study"
+                  className="inline-block px-8 py-4 bg-white text-[#333] text-xl font-semibold rounded-xl no-underline shadow-md transition-transform hover:-translate-y-0.5 hover:shadow-lg hover:bg-[#f0f4f8]"
+                >
+                  📝 Study
+                </a>
+              </li>
             </ul>
           </div>
           <div className="w-full md:w-1/2">

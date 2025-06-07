@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { ReactNode, useEffect } from 'react';
-import Loading from '@/components/atoms/Loading';
 import useAppRoot from '@/states/useAppRoot';
 import { ErrorBoundary } from '@/components/interactions/ErrorBoundary';
 import ScrollTopButton from '@/components/interactions/ScrollTopButton';
@@ -26,7 +25,6 @@ const BasicLayout = ({ children, title }: Readonly<Props>) => {
       <div className={styles.wrapper}>
         <main className={styles.content}>{children}</main>
         <ScrollTopButton theme="dark" />
-        <Loading />
       </div>
     </ErrorBoundary>
   );
