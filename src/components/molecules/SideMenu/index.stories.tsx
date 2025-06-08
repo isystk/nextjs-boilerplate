@@ -1,33 +1,40 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
 import SideMenu from './index';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Components/Organisms/SideMenu',
+  title: 'Components/Molecules/SideMenu',
   component: SideMenu,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
+    layout: 'fullscreen',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    id: {
-      control: 'text',
-    },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: {
-    id: 'first',
-  },
-} satisfies Meta<typeof SideMenu>;
-
+  decorators: [
+    Story => (
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '250px', padding: '1rem', borderRight: '1px solid #ccc' }}>
+          <Story />
+        </div>
+        <div id="main-content" style={{ padding: '1rem', flex: 1 }}>
+          <h2 id="section-1">Section 1</h2>
+          <p>Content under section 1</p>
+          <h3 id="subsection-1-1">Subsection 1.1</h3>
+          <p>Content under subsection 1.1</p>
+          <h2 id="section-2">Section 2</h2>
+          <p>Content under section 2</p>
+          <h3 id="subsection-2-1">Subsection 2.1</h3>
+          <p>Content under subsection 2.1</p>
+          <div style={{ height: '2000px' }} /> {/* for scroll testing */}
+        </div>
+      </div>
+    ),
+  ],
+} as Meta<typeof SideMenu>;
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+type Story = StoryObj<typeof SideMenu>;
+
 export const Default: Story = {
-  args: {},
+  args: {
+    selector: '#main-content',
+  },
 };

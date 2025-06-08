@@ -6,14 +6,14 @@ import useAppRoot from '@/states/useAppRoot';
 import { ErrorBoundary } from '@/components/interactions/ErrorBoundary';
 import ScrollTopButton from '@/components/interactions/ScrollTopButton';
 import SideMenu from '@/components/molecules/SideMenu';
+import Footer from '@/components/organisms/Footer';
 
 type Props = {
   children: ReactNode;
   title: string;
-  sideMenuId?: string;
 };
 
-const StudyLayout = ({ children, title, sideMenuId }: Readonly<Props>) => {
+const StudyLayout = ({ children, title }: Readonly<Props>) => {
   const { state } = useAppRoot();
 
   useEffect(() => {
@@ -26,16 +26,18 @@ const StudyLayout = ({ children, title, sideMenuId }: Readonly<Props>) => {
     <ErrorBoundary>
       <div className={styles.wrapper}>
         <main className={styles.content}>
-          <p className="font-bold text-3xl p-5 bg-blue-100">React Hooks 全19種の解説とサンプル</p>
-          <div className="grid md:grid-cols-5">
-            <div className="md:col-span-4 md:p-5">
-              <div className="flex items-center mb-5">
-                <h1 className="font-bold text-2xl">{title}</h1>
-              </div>
+          <p className="font-bold text-3xl p-5 bg-blue-100">{title}</p>
+          <div className="grid md:grid-cols-5 gap-4">
+            <div className="md:col-span-1">
+              <SideMenu selector="#contents" />
+            </div>
+            <div id="contents" className="md:col-span-4 md:p-5">
               {children}
             </div>
-            <SideMenu id={sideMenuId} className="md:col-span-1 md:order-first mt-5 md:mt-0" />
           </div>
+
+          <div className="h-48"></div>
+          <Footer />
         </main>
         <ScrollTopButton theme="dark" />
       </div>
