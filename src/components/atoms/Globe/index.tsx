@@ -28,6 +28,10 @@ export default function Globe() {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
+    controls.enableZoom = false; // スクロールでのズームを無効化
+    // 横方向のみ回転許可（縦方向の回転を制限）
+    controls.minPolarAngle = Math.PI / 2;
+    controls.maxPolarAngle = Math.PI / 2;
 
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(5, 3, 5);
@@ -42,11 +46,17 @@ export default function Globe() {
     });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
+    // const material = new THREE.PointsMaterial({
+    //   color: 0xeaeaea,
+    //   size: 0.03,
+    // });
+    // const points = new THREE.Points(geometry, material);
+    // scene.add(points);
 
     const animate = () => {
       requestAnimationFrame(animate);
       // 自動回転を追加
-      sphere.rotation.y += 0.005;
+      sphere.rotation.y += 0.002;
       controls.update();
       renderer.render(scene, camera);
     };

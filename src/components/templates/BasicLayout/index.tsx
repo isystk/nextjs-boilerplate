@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { ReactNode, useEffect } from 'react';
-import Loading from '@/components/atoms/Loading';
 import useAppRoot from '@/states/useAppRoot';
 import { ErrorBoundary } from '@/components/interactions/ErrorBoundary';
 import ScrollTopButton from '@/components/interactions/ScrollTopButton';
@@ -12,7 +11,7 @@ type Props = {
   title: string;
 };
 
-const LaraECLayout = ({ children, title }: Readonly<Props>) => {
+const BasicLayout = ({ children, title }: Readonly<Props>) => {
   const { state } = useAppRoot();
 
   useEffect(() => {
@@ -23,11 +22,12 @@ const LaraECLayout = ({ children, title }: Readonly<Props>) => {
 
   return (
     <ErrorBoundary>
-      <main className={styles.content}>{children}</main>
-      <ScrollTopButton />
-      <Loading />
+      <div className={styles.wrapper}>
+        <main className={styles.content}>{children}</main>
+        <ScrollTopButton theme="dark" />
+      </div>
     </ErrorBoundary>
   );
 };
 
-export default LaraECLayout;
+export default BasicLayout;

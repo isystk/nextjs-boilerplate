@@ -1,3 +1,8 @@
+@use '@/assets/styles/variable' as *;
+
+.wrapper {
+  background-color: $gray;
+}
 
 .content {
   width: 100%;

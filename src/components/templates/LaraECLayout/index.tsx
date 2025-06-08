@@ -28,24 +28,26 @@ const LaraECLayout = ({ children, title }: Readonly<Props>) => {
 
   return (
     <ErrorBoundary>
-      <Header />
-      <Circles>
-        <main className={styles.content}>{children}</main>
-      </Circles>
-      <Footer />
-      <FlashMessage />
-      <ToastMessage
-        isOpen={!!state.toastMessage}
-        message={state.toastMessage || ''}
-        onConfirm={() => {
-          service?.hideToastMessage();
-        }}
-        onCancel={() => {
-          service?.hideToastMessage();
-        }}
-      />
-      <ScrollTopButton />
-      <Loading />
+      <div className={styles.wrapper}>
+        <Header />
+        <Circles>
+          <main className={styles.content}>{children}</main>
+        </Circles>
+        <Footer />
+        <FlashMessage />
+        <ToastMessage
+          isOpen={!!state.toastMessage}
+          message={state.toastMessage || ''}
+          onConfirm={() => {
+            service?.hideToastMessage();
+          }}
+          onCancel={() => {
+            service?.hideToastMessage();
+          }}
+        />
+        <ScrollTopButton />
+        <Loading />
+      </div>
     </ErrorBoundary>
   );
 };

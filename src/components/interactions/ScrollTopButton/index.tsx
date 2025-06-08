@@ -2,7 +2,11 @@ import styles from './styles.module.scss';
 import React, { useEffect, useState } from 'react';
 import Portal from '@/components/interactions/Portal';
 
-const ScrollTopButton: React.FC = () => {
+type Props = {
+  theme?: 'light' | 'dark';
+};
+
+const ScrollTopButton = ({ theme = 'light' }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
@@ -38,9 +42,9 @@ const ScrollTopButton: React.FC = () => {
     <Portal>
       <button
         onClick={scrollToTop}
-        className={`${styles.button} ${isVisible ? styles.show : styles.hide} ${isVisible ? '' : 'hide'}`}
+        className={`${styles['button-' + theme]} ${isVisible ? styles.show : styles.hide} ${isVisible ? '' : 'hide'} `}
       >
-        <span className={styles.buttonLabel}>^</span>
+        <span>^</span>
       </button>
     </Portal>
   );
